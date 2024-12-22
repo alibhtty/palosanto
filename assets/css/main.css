@@ -1,14 +1,14 @@
 @charset "utf-8";
 
 :root {
-  --color-uno:#C5945E; /*  #C5945E    #E6037E */
-  --color-uno-hover:#d6a36d;
+  --color-uno:#ff0000; /*   C5945E    #C5945E    #E6037E */
+  --color-uno-hover:#ff0000;  /* d6a36d */
   --color-menu:#a48aff;
   --magenta: #FF00FF;
   --amarillo: #FFFF00;
-  --bg-light: #fff6f0;
+  --bg-light: #ffe2e2; /* fff0f0 */
   --blanco:#FFFFFF;
-  --light-amarillo: #FFFFE0;
+  --light-amarillo: #ffeee0; /* FFFFE0 */
   --naranja: #FF7B47;
   --rojo: #FF5C5C;
   --azul: #0000FF;
@@ -572,7 +572,7 @@ header.active .showmenu span {
   width: 100vw; /* 450px */
   height: 100vh;
   /* background: var(--color-uno); */
-  background: linear-gradient(to right, var(--color-uno), rgba(130, 97, 62, .8), rgba(130, 97, 62, 0.1), transparent);
+  background: linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent);
   z-index: 10;
   overflow: auto;
   -webkit-transition: all 300ms ease;
@@ -585,17 +585,19 @@ header.active .showmenu span {
 @media (orientation:portrait){
   .hamburger_menu{
     width: 100%;
-    background-color: rgb(197, 148, 94);
+    /* background-color: rgb(197, 148, 94); */
+    background-color: var(--color-uno);
     /* background: linear-gradient(to right, var(--color-uno) 80%, transparent 90%); */
-    background: rgb(197, 148, 94, .3);
+    background: rgba(197, 94, 94, 0.3);
     backdrop-filter: blur(40px);
   }
 }
 @media (display-mode:standalone){
   .hamburger_menu{
     width: 100%;
-    background-color: rgb(197, 148, 94);
-    background: rgb(197, 148, 94, .3);
+    /* background-color: rgb(197, 148, 94); */
+    background-color: var(--color-uno);
+    background: rgba(197, 94, 94, 0.3);
   }
 }
 .showmenu .hamburger_menu {
@@ -2476,6 +2478,7 @@ footer .footer-left .location {
 }
 footer .footer-right {
   /* width: 100%; */
+  filter: drop-shadow(2px 4px 6px black);
   display: block;
   padding: 8em;
   height: 29em;
