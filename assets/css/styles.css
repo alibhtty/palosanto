@@ -108,9 +108,9 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  /* max-width: 1120px; */
-  width: 100%;
-    padding: 0 7em;
+  max-width: 1120px;
+  /* width: 100%; */
+    /* padding: 0 7em; */
   margin-inline: 1.5rem;
 }
 
@@ -662,6 +662,8 @@ img {
 .footer__group,
 .footer__social{
   display: flex;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
 }
 
 .footer__group{

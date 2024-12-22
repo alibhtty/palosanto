@@ -311,6 +311,7 @@ p {
   color: #1a1a11;
   line-height: 20px;
   letter-spacing: 1px;
+  text-wrap: balance;
 }
 p a {
   color: #4777ac;
