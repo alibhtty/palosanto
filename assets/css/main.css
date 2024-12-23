@@ -8,7 +8,7 @@
   --amarillo: #FFFF00;
   --bg-light: #ffe2e2; /* fff0f0 */
   --blanco:#FFFFFF;
-  --light-amarillo: #ffeee0; /* FFFFE0 */
+  --light-amarillo: #ffe2e2; /*  ffeee0 */
   --naranja: #FF7B47;
   --rojo: #FF5C5C;
   --azul: #0000FF;
@@ -566,39 +566,61 @@ header.active .showmenu span {
   display: block;
   margin-left: 0;
 }
+/* .hamburger_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url(./../image/galeria/01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent);
+  z-index: 10;
+  overflow: auto;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -webkit-transform: translateX(-100vw);
+  transform: translateX(-100vw);
+} */
 .hamburger_menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw; /* 450px */
   height: 100vh;
-  /* background: var(--color-uno); */
-  background: linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent);
+  background: 
+    linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent),
+    url(./../image/galeria/02.jpg) no-repeat center center/cover;
   z-index: 10;
   overflow: auto;
   -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-  -webkit-transform: translateX(-100vw); /* -450px */
+  transition: all 300ms ease-in-out;
+  -webkit-transform: translateX(-100vw);
   transform: translateX(-100vw);
-  /* -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); */
 }
+
 @media (orientation:portrait){
   .hamburger_menu{
     width: 100%;
-    /* background-color: rgb(197, 148, 94); */
     background-color: var(--color-uno);
-    /* background: linear-gradient(to right, var(--color-uno) 80%, transparent 90%); */
     background: rgba(197, 94, 94, 0.3);
     backdrop-filter: blur(40px);
+
+    background: 
+      linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent),
+      url(./../image/galeria/02.jpg) no-repeat center center/cover;
   }
 }
 @media (display-mode:standalone){
   .hamburger_menu{
     width: 100%;
-    /* background-color: rgb(197, 148, 94); */
     background-color: var(--color-uno);
     background: rgba(197, 94, 94, 0.3);
+
+    background: 
+      linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent),
+      url(./../image/galeria/02.jpg) no-repeat center center/cover;
   }
 }
 .showmenu .hamburger_menu {
@@ -2541,9 +2563,11 @@ footer .copy-block {
   color: #f1f1f1;
 }
 .content-alibhtty{
+  width: fit-content;
   display: flex;
   align-items: center;
-  margin: 0 5em;
+  /* margin: 0 5em; */
+  margin: 0 3em;
   justify-content: center;
 }
 .disenado-por{
@@ -3413,16 +3437,19 @@ footer .social-icon a.googleplus-icon:hover {
     display: block;
   }
   footer .copy-block {
-    display: block;
-    padding: 25px 18px;
-    justify-content: center;
+    display: flex;
+    padding: 2em 1.5em;
+    /* justify-content: center; */
+    justify-content: space-between;
     align-items: baseline;
   }
   .alibhtty{
+    width: fit-content;
     margin: 0;
     font-size: 13px;
   }
   .derechos{
+    width: fit-content;
     padding-bottom: .2em;
     margin: 0 1em;
   }
@@ -4371,6 +4398,7 @@ input#quantity {
 .home header {
   position: absolute;
   height: 5.5em;
+  border-bottom: solid .5px rgb(255,255,255,.2);
 }
 .home header.active {
   height: 5.5em;
