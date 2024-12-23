@@ -107,7 +107,7 @@ body{
   .container_grid [class*="card"]{
     max-height:auto;
     max-width:auto;
-    border-radius:.5em;
+    border-radius:.8em;
     margin:0 auto;
     margin-bottom:.5em;
     position:relative;
@@ -115,6 +115,12 @@ body{
     cursor:pointer;
     transition: all .5s ease;
   }
+  @media (orientation:portrait){
+    .container_grid [class*="card"]{
+      margin-bottom: 0;
+      column-gap: .5em;
+    }
+  } 
   .container_grid [class*="card"]:hover{
     scale:102%;
     z-index:99;
@@ -128,7 +134,7 @@ body{
   
   .container_grid figcaption{
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     left:12px;
     color:white;
     font-size:13px;
@@ -329,13 +335,11 @@ body{
     @media all and (display-mode: standalone) {
       .container_grid {
         columns: 2;
-        column-gap: .8rem;
+        /* column-gap: .8rem;
         margin-left: .5rem;
-        margin-right: .5rem;
+        margin-right: .5rem; */
         margin-top: 2rem;
-        margin-bottom: 3rem;
-        /* padding:.5rem .5rem;
-        margin-top: 2rem; */
+        padding: .8rem 1.5em;
       }
       #close-carousel {
         display: none;
