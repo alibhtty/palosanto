@@ -146,7 +146,7 @@ video {
 @media (orientation:portrait){
   .copy-block{
     border-radius: 2em 2em 0 0;
-    height: 18em; /* 160px */
+    height: 17em; /* 160px */
     font-size: 9px;
     cursor: default;
     background-color: #1a1a1a;
@@ -609,7 +609,7 @@ header.active .showmenu span {
 
     background: 
       linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent),
-      url(./../image/galeria/02.jpg) no-repeat center center/cover;
+      url(./../image/menu-portrait.jpg) no-repeat center center/cover;
   }
 }
 @media (display-mode:standalone){
@@ -2567,7 +2567,7 @@ footer .copy-block {
   display: flex;
   align-items: center;
   /* margin: 0 5em; */
-  margin: 0 3em;
+  margin: 0 3em; /* 0 3em */
   justify-content: center;
 }
 .disenado-por{
@@ -3438,10 +3438,18 @@ footer .social-icon a.googleplus-icon:hover {
   }
   footer .copy-block {
     display: flex;
-    padding: 2em 1.5em;
+    padding: 2em 2em;
     /* justify-content: center; */
     justify-content: space-between;
     align-items: baseline;
+  }
+  .content-alibhtty{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    /* margin: 0 5em; */
+    margin: 0 0em; /* 0 3em */
+    /* justify-content: center; */
   }
   .alibhtty{
     width: fit-content;
@@ -3451,7 +3459,7 @@ footer .social-icon a.googleplus-icon:hover {
   .derechos{
     width: fit-content;
     padding-bottom: .2em;
-    margin: 0 1em;
+    margin: 0 0;
   }
   .blog .content-area .block1 .block1-left {
     top: 0;
