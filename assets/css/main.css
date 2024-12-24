@@ -17,6 +17,17 @@
   --swiper-theme-color: #007AFF;
 }
 
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+  /* box-sizing: content-box; */
+
+}
+
+
 h1, h2, h3, h4, a, img{
   user-select: none;
   -webkit-user-select: none;
@@ -159,6 +170,8 @@ video {
      -khtml-user-select: none;
      -moz-user-select: none;
      -ms-user-select: none;
+     overscroll-behavior-x: none;
+     overscroll-behavior-y: none;
      user-select: none;
      -webkit-tap-highlight-color:  rgba(255, 255, 255, 0.5);
    }
@@ -166,9 +179,9 @@ video {
 
  @media screen and (display-mode: standalone){
    html {
-   overscroll-behavior: contain;
+   /* overscroll-behavior: contain;
    overscroll-behavior-x: contain;
-   overscroll-behavior-y: none;
+   overscroll-behavior-y: none; */
    -webkit-touch-callout: none;
    -webkit-user-select: none;
    -khtml-user-select: none;
@@ -620,7 +633,7 @@ header.active .showmenu span {
 
     background: 
       linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent),
-      url(./../image/galeria/02.jpg) no-repeat center center/cover;
+      url(./../image/menu-portrait.jpg) no-repeat center center/cover;
   }
 }
 .showmenu .hamburger_menu {
@@ -4565,14 +4578,6 @@ a.menubtn {
     margin-top: 10px;
   }
 }
-
-
-html, body {
-  overflow-x: hidden;
-  margin: 0;
-  box-sizing: content-box;
-}
-
 
 
 

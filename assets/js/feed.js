@@ -1,82 +1,79 @@
-// Get the modal
-var modal = document.getElementsByClassName("card_exp");
+// Obtener elementos del modal
+var modal = document.querySelector('.modal'); // Modal en general
+var modalImg = document.querySelector('.modal-content'); // Imagen dentro del modal
+var modalCaption = document.querySelector('.modal-caption'); // Caption dentro del modal
+var closeBtn = document.querySelector('.x');  // Botón de cierre
+var span = document.querySelector('.carousel');  // Elemento que muestra el modal
 
-// Get all the image elements with class "card_exp"
-var images = document.getElementsByClassName("card_exp");
+// Obtener todas las imágenes con la clase 'card_exp'
+var images = document.querySelectorAll('.card_exp');
 
-// Get the <span> element that closes the modal
-var x = document.getElementsByClassName('x')[0];
-var span = document.getElementsByClassName('carousel')[0];
-var bg = document.getElementsByClassName("modal");
+// Cuando haces clic en una imagen
+images.forEach(function(image, index) {
+  image.onclick = function() {
+    setTimeout(function() {
+      span.style.display = "block";
+    }, 100);
+    
+    span.style.opacity = "1"; // Mostrar la animación de apertura
+    setTimeout(function() {
+      modal.style.opacity = "1"; // Mostrar el modal
+    }, 100);
 
-// Loop through each image and attach the click event
-for (var i = 0; i < images.length; i++) {
-  images[i].onclick = function() {
-    setTimeout('span.style.display = "block";', 100)
-    span.style.opacity = "1";
-    setTimeout('bg[0].style.opacity = "1";',100)
-    /*modal.style.display = "block";*/
+    modal.style.display = "block"; // Mostrar el modal
+
+    // Asignar la imagen y el caption al modal
+    var imgSrc = image.querySelector('img').src;
+    modalImg.src = imgSrc;
+    
+    var caption = image.querySelector('figcaption').textContent || "";
+    modalCaption.textContent = caption;
   };
-}
+});
 
-// When the user clicks on <span> (x), close the modal
-x.onclick = function(){
+// Función para cerrar el modal cuando se hace clic en el botón de cierre (x)
+closeBtn.onclick = function() {
   span.style.display = "none";
   span.style.opacity = "0";
   modal.style.opacity = "0";
-  setTimeout('modal.style.display = "none";', 300)
+  setTimeout(function() {
+    modal.style.display = "none"; // Ocultar el modal
+  }, 300);
 };
 
-var gridImages = Array.from(document.getElementsByClassName('img_card'));
-var carouselImages = document.querySelector('.carousel-images');
+// Botones para navegar entre las imágenes
 var prevButton = document.querySelector('#prev-card');
 var nextButton = document.querySelector('#next-card');
-var modal = document.querySelector('.modal');
-var modalImg = document.querySelector('.modal-content');
-var currentIndex = 0;
 
-
-gridImages.forEach(function(image, index) {
-  image.addEventListener('click', function() {
-    currentIndex = index;
-    showImage(currentIndex);
-    modal.style.display = 'block';
-  });
-});
-
-
-// Navega para a imagem anterior
-
+// Navegar a la imagen anterior
 prevButton.addEventListener('click', function() {
+  var currentIndex = Array.from(images).findIndex(function(img) {
+    return img.querySelector('img').src === modalImg.src;
+  });
+
   currentIndex--;
-  if (currentIndex < 0) {
-    currentIndex = gridImages.length - 1;
-  }
-  showImage(currentIndex);
+  if (currentIndex < 0) currentIndex = images.length - 1;
+
+  // Mostrar la imagen anterior
+  modalImg.src = images[currentIndex].querySelector('img').src;
+  modalCaption.textContent = images[currentIndex].querySelector('figcaption').textContent;
 });
 
+// Navegar a la imagen siguiente
 nextButton.addEventListener('click', function() {
+  var currentIndex = Array.from(images).findIndex(function(img) {
+    return img.querySelector('img').src === modalImg.src;
+  });
+
   currentIndex++;
-  if (currentIndex >= gridImages.length) {
-    currentIndex = 0;
-  }
-  showImage(currentIndex);
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  // Mostrar la imagen siguiente
+  modalImg.src = images[currentIndex].querySelector('img').src;
+  modalCaption.textContent = images[currentIndex].querySelector('figcaption').textContent;
 });
 
-// Define os manipuladores de eventos para os botões de navegação
-prevButton.addEventListener('click', prevButton);
-nextButton.addEventListener('click', nextButton);
-
-// Exibe a primeira imagem ao carregar a página
-function showImage(index) {
-  modalImg.src = gridImages[index].src;
-}
-
-
-
-
-
-/* ====== SWIPE EN TOUCH @alibhtty ====== */
+// Manejo de gestos táctiles para navegar entre las imágenes
 var touchStartX = 0;
 var touchEndX = 0;
 var touchStartY = 0;
@@ -84,102 +81,41 @@ var touchEndY = 0;
 var threshold = 50; // Umbral de desplazamiento en píxeles
 
 modal.addEventListener('touchstart', function(event) {
-    touchStartX = event.changedTouches[0].screenX;
-    touchStartY = event.changedTouches[0].screenY;
+  touchStartX = event.changedTouches[0].screenX;
+  touchStartY = event.changedTouches[0].screenY;
 }, false);
 
 modal.addEventListener('touchend', function(event) {
-    touchEndX = event.changedTouches[0].screenX;
-    touchEndY = event.changedTouches[0].screenY;
-    handleGesture();
+  touchEndX = event.changedTouches[0].screenX;
+  touchEndY = event.changedTouches[0].screenY;
+  handleGesture();
 }, false); 
 
 function handleGesture() {
-  var swiped = 'swiped: ';
+  var swiped = '';
   if (Math.abs(touchEndX - touchStartX) > threshold) {
     if (touchEndX < touchStartX) {
-        swiped += 'left';
+        swiped = 'left';
     }
     if (touchEndX > touchStartX) {
-        swiped += 'right';
+        swiped = 'right';
     }
   }
   if (Math.abs(touchEndY - touchStartY) > threshold) {
     if (touchEndY < touchStartY) {
-        swiped += 'up';
+        swiped = 'up';
     }
     if (touchEndY > touchStartY) {
-        swiped += 'down';
+        swiped = 'down';
     }
   }
-  if (swiped.includes('left')) {
-      // Ir a la imagen anterior
-      prevButton.click();
-  }
-  if (swiped.includes('right')) {
-      // Ir a la imagen siguiente
+  if (swiped === 'left') {
       nextButton.click();
   }
-  if (swiped.includes('up')) {
-      // Cerrar el modal solo si la aplicación está en modo standalone
-    if (window.matchMedia('(display-mode: standalone)').matches && Math.abs(touchStartY - touchEndY) > 50) {
-      x.click();
-    }
-}
-  if (swiped.includes('down')) {
-      // Cerrar el modal solo si la aplicación está en modo standalone
-      if (window.matchMedia('(display-mode: standalone)').matches && Math.abs(touchStartY - touchEndY) > 50) {
-        x.click();
-      }
-      /* if (window.matchMedia('(display-mode: standalone)').matches) {
-          x.click();
-      } */
-      /* if (Math.abs(touchStartY - touchEndY) > 100) {
-        x.click();
-      } */ // Sin display-mode: standalone
+  if (swiped === 'right') {
+      prevButton.click();
+  }
+  if (swiped === 'up' || swiped === 'down') {
+      closeBtn.click();
   }
 }
-
-
-
-
-
-/* ===== CAPTION ===== */
-// Supongamos que tienes un elemento en tu modal donde quieres mostrar la imagen
-var modalImage = document.querySelector('.modal-content');
-
-// Y un elemento donde quieres mostrar el figcaption
-var modalCaption = document.querySelector('.modal-caption');
-
-// Asegúrate de que todas tus imágenes tienen un event listener para el evento de clic
-var images = document.querySelectorAll('.img_card');
-images.forEach(function(img) {
-    img.addEventListener('click', function(event) {
-        // Aquí es donde muestras la imagen en el modal
-        modalImage.src = this.src;
-        
-        // Y aquí es donde puedes agregar el figcaption al modal
-        var figcaption = this.nextElementSibling;
-        if (figcaption) {
-            modalCaption.textContent = figcaption.textContent;
-        }
-    });
-});
-
-
-
-
-
-/* ===== ScrollBAR Invisible ===== */
-    // Crear un nuevo elemento de estilo
-    var style = document.createElement('style');
-
-    // Definir las reglas CSS para ocultar la barra de desplazamiento
-    style.innerHTML = `
-    ::-webkit-scrollbar {
-        width: 0 !important;
-    }
-    `;
-    
-    // Agregar el nuevo elemento de estilo al head del documento
-    document.head.appendChild(style);
