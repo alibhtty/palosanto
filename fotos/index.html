@@ -42,6 +42,60 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/icons/favicon/favicon-32x32.png">
     <link rel="manifest" href="../../../assets/icons/favicon/site.webmanifest">
     <link rel="mask-icon" href="../../../assets/icons/favicon/safari-pinned-tab.svg" color="#ff0000">
+
+    <style>
+        #image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+        }
+        .card_medium {
+            position: relative;
+            width: 100%; /* 200px */
+            height: auto; /* 300px */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .img_card {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .caption_button {
+            min-width: 9em;
+            max-width: auto;
+            position: absolute;
+            bottom: 1.8em;
+            left: 50%;
+            transform: translateX(-50%);
+            /* background-color: rgb(255,255,255,.1); */
+            backdrop-filter: blur(10px);
+            border: solid 1px #f1f1f1;
+            color: #f1f1f1;
+            /* border: none; */
+            border-radius: 2em;
+            padding: .8em  1em;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            z-index: 99;
+            transition: all .3s ease-in-out;
+        }
+        .caption_button:hover{
+            background-color: #000;
+        }
+        @media (orientation:portrait){
+            .container_grid{
+            columns: 1;
+            width: 100%;
+            }
+        }
+        .container_grid [class*="card"]{
+            margin-bottom: 0;
+        }
+    </style>
+
 </head>
 
 <body class="home page-template page-template-front-page page-template-front-page-php page page-id-4 group-blog" oncontextmenu="return false" onkeydown="return false">
@@ -123,7 +177,7 @@
                     </div>
                     <div class="col-md-4 pull-right col-xs-12 right-button">
                         <li id="menu-item-391" style="cursor: pointer;">
-                            <a href="./../../../fotos/" class="right-side light">Todos las fechas</a>
+                            <a href="./" class="right-side light">Fotos de la última fecha</a>
                         </li>
                         <!-- <a href="index.html#" class="right-side toggleReservation">Hacer una Reserva</a>  -->
                     </div>
@@ -137,8 +191,8 @@
         <main>
             <section>
                 <div class="galeria-title">
-                    Miércoles 12 <br>
-                    <b class="galeria-subtitle"> 18 Diciembre 2024 </b>
+                    Fotos 2024 <br>
+                    <!-- <b class="galeria-subtitle"> Diciembre 2024 </b> -->
                 </div>
             </section>
         
@@ -197,7 +251,7 @@
                                                 <li id="menu-item-83"
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83">
                                                     <a class="mobile_menu-nav-link cta makebtn "
-                                                        href="./../../../#novedades">Novedades</a>
+                                                        href="#novedades">Novedades</a>
                                                 </li>
                                                 <li id="menu-item-746"
                                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-746">
