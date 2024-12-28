@@ -8,6 +8,7 @@
     position: absolute;
     text-align: center;
     min-width: 8em;
+    font-family: Verdana;
     text-wrap-style: balance;
     top: 43%;
     left: 50%;
@@ -27,6 +28,8 @@
     /* background-color:rgb(19, 20, 22); */
     /* background-color: yellow; */
     overflow:hidden;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
     font-family: Lato, "Trebuchet MS", "Verdana", "sans-serif";
   }
   
