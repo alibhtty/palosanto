@@ -147,7 +147,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  vertical-align: baseline;
+  vertical-align: super; /* baseline */
   background: transparent;
   text-decoration: none;
   list-style: none;
@@ -627,7 +627,7 @@ header.active .showmenu span {
     backdrop-filter: blur(40px);
 
     background: 
-      linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.8), rgba(130, 62, 62, 0.2), transparent),
+      linear-gradient(to right, var(--color-uno), rgba(143, 48, 48, 0.9), rgba(139, 36, 36, 0.7), transparent),
       url(./../image/menu-portrait.jpg) no-repeat center center/cover;
   }
 }
@@ -4972,7 +4972,7 @@ iframe{
 
 
 /* MODAL REDIRECCION /CONTACTO */
-.modal {
+.modalCount {
   position: fixed;
   top: 0;
   left: 0;
@@ -4988,8 +4988,9 @@ iframe{
 
 .modal-content {
   background: #ffffff;
-  padding: 20px;
-  margin: 0 2em;
+  /* padding: 20px; */
+  margin: 0 0em;
+  border: none;
   width: fit-content;
   min-width: 4.5em;
   border-radius: 2em;
@@ -5007,3 +5008,15 @@ body.fade-out {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
+
+
+/* .modal-content {
+  transition: transform 0.25s ease;
+  cursor: zoom-in;
+  transform-origin: center center;
+}
+
+.modal-content.zoomed {
+  transform: scale(2);
+  cursor: zoom-out;
+} */

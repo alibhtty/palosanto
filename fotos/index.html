@@ -53,9 +53,10 @@
             position: relative;
             width: 100%; /* 200px */
             height: auto; /* 300px */
+            min-height: 6em;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 1em;
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
         }
         .img_card {
             width: 100%;
@@ -83,7 +84,8 @@
             transition: all .3s ease-in-out;
         }
         .caption_button:hover{
-            background-color: #000;
+            background-color: rgba(0, 0, 0, .5);
+            /* border: solid 1px #000000; */
         }
         @media (orientation:portrait){
             .container_grid{
@@ -102,12 +104,6 @@
 <body class="home page-template page-template-front-page page-template-front-page-php page page-id-4 group-blog" oncontextmenu="return false" onkeydown="return false">
 
     <div id="wrapper">
-
-        <div id="modal" class="modal hidden">
-            <div class="modal-content">
-              <p> <span id="countdown">3</span> </p>
-            </div>
-        </div>
 
         <!-- Header -->
         <div class='panel home' data-section-name="home">
