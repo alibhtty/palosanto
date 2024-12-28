@@ -66,7 +66,7 @@
             min-width: 9em;
             max-width: auto;
             position: absolute;
-            bottom: 1.8em;
+            bottom: 45%;
             left: 50%;
             transform: translateX(-50%);
             /* background-color: rgb(255,255,255,.1); */
@@ -93,6 +93,7 @@
         }
         .container_grid [class*="card"]{
             margin-bottom: 0;
+            border: solid .5px #eeeeee;
         }
     </style>
 
@@ -101,6 +102,12 @@
 <body class="home page-template page-template-front-page page-template-front-page-php page page-id-4 group-blog" oncontextmenu="return false" onkeydown="return false">
 
     <div id="wrapper">
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+              <p> <span id="countdown">3</span> </p>
+            </div>
+        </div>
 
         <!-- Header -->
         <div class='panel home' data-section-name="home">

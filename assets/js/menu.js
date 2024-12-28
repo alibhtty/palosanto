@@ -84,34 +84,73 @@ $ = jQuery;
 
 
 
-    /* const button = document.querySelector('.make-btn-main');
-    let startX = 0;
-    let currentX = 0;
+
+
+    /* TIEMPO LIMITE */
+    const dueDate = new Date('2024-12-27'); // Fecha límite
+    const deadline = 8; // 8 DIAS PARA DESAPARECER
     
-    button.addEventListener('touchstart', function(event) {
-        startX = event.touches[0].clientX;
-        button.classList.remove('swipe-out');
-        button.querySelector('.carta').classList.add('active-blur');
+    // Calcular días transcurridos
+    const daysPassed = Math.floor(
+      (new Date() - dueDate) / (1000 * 60 * 60 * 24)
+    );
     
-        // Desactivar scroll en el body
-        document.body.style.overflow = 'hidden';
-    });
+    if (daysPassed > 0) {
+      const daysLate = deadline - daysPassed;
+      let opacity = daysLate / deadline;
     
-    button.addEventListener('touchmove', function(event) {
-        event.preventDefault(); // Prevent scrolling only during touch move
-        currentX = event.touches[0].clientX - startX;
-        button.style.transform = `translateX(${currentX}px)`;
-    });
+      // Asegurarse de que la opacidad esté entre 0 y 1
+      opacity = Math.min(opacity, 1);
+      opacity = Math.max(opacity, 0);
     
-    button.addEventListener('touchend', function(event) {
-        button.querySelector('.carta').classList.remove('active-blur');
-        if (Math.abs(currentX) > button.offsetWidth / 2) {
-            button.classList.add('swipe-out');
-            button.style.transform = currentX > 0 ? `translateX(${window.innerWidth}px)` : `translateX(-${window.innerWidth}px)`;
-        } else {
-            button.style.transform = 'translateX(0)';
-        }
-    
-        // Reactivar scroll en el body
-        document.body.style.overflow = 'auto';
-    }); */
+      // Aplicar opacidad al cuerpo del sitio web
+      document.body.style.opacity = opacity;
+    }
+
+
+
+    /* PASADOS 3 MIN */
+    // Redirigir después de 3 minutos
+    /* setTimeout(() => {
+        window.location.href = '/contacto'; // Cambia "/contacto" según la ruta que necesites
+      }, 18000); */
+
+
+
+    // Función para mostrar el modal
+function showModal() {
+    const modal = document.getElementById("modal");
+    const countdownElement = document.getElementById("countdown");
+    let countdown = 5; // Tiempo de cuenta regresiva en segundos
+  
+    modal.classList.remove("hidden");
+  
+    // Actualizar la cuenta regresiva
+    const countdownInterval = setInterval(() => {
+      countdown--;
+      countdownElement.textContent = countdown;
+  
+      if (countdown === 0) {
+        clearInterval(countdownInterval);
+        redirectToContact();
+      }
+    }, 1000);
+  }
+  
+  // Función para redirigir suavemente
+  function redirectToContact() {
+    document.body.classList.add("fade-out"); // Aplicar la clase para la transición
+    setTimeout(() => {
+      window.location.href = "/contacto"; // Cambiar a la ruta deseada
+    }, 1000); // Esperar el tiempo de la transición antes de redirigir
+  }
+  
+  // Mostrar el modal la primera vez después de 3 minutos (180000 ms)
+  setTimeout(() => {
+    showModal();
+  }, 5000); // 3 minutos
+  
+  // Repetir el modal cada 10 minutos (600000 ms)
+  setInterval(() => {
+    showModal();
+  }, 300000); // 5 minutos

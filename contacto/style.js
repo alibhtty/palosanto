@@ -31,14 +31,14 @@ class Birthday {
      let x = evt.clientX || evt.touches && evt.touches[0].pageX
      let y = evt.clientY || evt.touches && evt.touches[0].pageY
      
-     let count = random(3,10)
+     let count = random(30,10) /* 3 10 */
      for(let i = 0; i < count; i++) this.fireworks.push(new Firework(
         random(this.spawnA, this.spawnB),
         this.height,
         x,
         y,
-        random(0, 260),
-        random(30, 110)))
+        random(0, 10), /* 0 260 */
+        random(30, 200))) /* 30 110 */
           
      this.counter = -1
      
@@ -46,7 +46,7 @@ class Birthday {
   
   update(delta) {
     ctx.globalCompositeOperation = 'hard-light'
-    ctx.fillStyle = `rgba(20,20,20,${ 7 * delta })`
+    ctx.fillStyle = `rgba(10,10,20,${ 2 * delta })` /* 20,20,20    7 */
     ctx.fillRect(0, 0, this.width, this.height)
 
     ctx.globalCompositeOperation = 'lighter'
@@ -98,7 +98,7 @@ class Firework {
         y: this.y
       })
 
-      if (this.history.length > 20) this.history.shift()
+      if (this.history.length > 10) this.history.shift()
 
     } else {
       if (this.offsprings && !this.madeChilds) {
@@ -122,13 +122,13 @@ class Firework {
         for (let i = 0; this.history.length > i; i++) {
           let point = this.history[i]
           ctx.beginPath()
-          ctx.fillStyle = 'hsl(' + this.shade + ',100%,' + i + '%)'
+          ctx.fillStyle = 'hsl(' + this.shade + ',20%,' + i + '%)'
           ctx.arc(point.x, point.y, 1, 0, PI2, false)
           ctx.fill()
         } 
       } else {
       ctx.beginPath()
-      ctx.fillStyle = 'hsl(' + this.shade + ',100%,50%)'
+      ctx.fillStyle = 'hsl(' + this.shade + ',100%,50%)' /* 100% 55% */
       ctx.arc(this.x, this.y, 1, 0, PI2, false)
       ctx.fill()
     }
@@ -153,7 +153,7 @@ document.ontouchstart = evt => birthday.onClick(evt)
   	let delta = now - then
 
     then = now
-    birthday.update(delta / 1000)
+    birthday.update(delta / 1500)
   	
 
   })()

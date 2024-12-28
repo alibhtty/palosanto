@@ -2,21 +2,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniversario Yankú</title>
+    <title>4B</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="theme-color" content="#C5945E" />
-	<meta name="description" content="Prueba el sabor exótico de nuestra Amazonía, y la variedad de platos fusión asiática en Yankú y disfruta de nuestra variedad de platos." />
+    <meta name="theme-color" content="#ff0000" />
+	<meta name="description" content="4B." />
 	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="msapplication-TileColor" content="#ff0000">
   
 	<meta property="og:locale" content="es_ES" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Chifa Yankú - Barcelona" />
-	<meta property="og:description" content="Chifa Yankú - Barcelona" />
-	<meta property="og:url" content="https://chifayanku.web.app/" />
-	<meta property="og:site_name" content="Chifa Yankú - Barcelona" />
+	<meta property="og:title" content="4B - Barcelona" />
+	<meta property="og:description" content="4B - Barcelona" />
+	<meta property="og:url" content="https://alibhtty.web.app/go" />
+	<meta property="og:site_name" content="4B - Barcelona" />
 	<meta property="article:modified_time" content="2024-10-01T04:10:14+00:00" />
 	<meta name="twitter:card" content="summary_large_image" />
+    
 
     <!-- Slide Text -->
     <!-- <link rel="stylesheet" href="../assets/css/slide-text.css"> -->
@@ -28,14 +29,7 @@
     <link rel='stylesheet' href='./carta.css' type='text/css'> -->
 
     <link rel="stylesheet" href="./style.css">
-  
-    <script type="text/javascript" src='./data.js'></script>
-    <script type="text/javascript" src='./menu.js'></script>
-    <script type='text/javascript' src='../assets/js/jquery/jquery.min-ver=3.5.1.js' id='jquery-core-js'></script>
-    <script type='text/javascript' src='../assets/js/jquery/jquery-migrate.min-ver=3.3.2.js'></script>
-    <script type='text/javascript' src='../assets/js/html5-ver=3.7.3.js'></script>
-    <!-- <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style> -->
-  
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon/apple-touch-icon.png">  <!-- ../assets/icons/favicon/safari-pinned-tab.svg -->
@@ -44,10 +38,35 @@
     <link rel="mask-icon" href="../assets/icons/favicon/safari-pinned-tab.svg" color="#ff0000">
 </head>
 <body>
-    <h1>1º Aniversario <br> Yankú</h1>
+
+    <div class="cont-volver">
+        <a href="javascript:history.back()" id="backButton">Volver</a> 
+    </div>
+
+    <h1>Contactar <br> por el sitio</h1>
     <canvas id="birthday"></canvas>
-    <div id="testbutton"></div>
+    <a href="" id="testbutton"></a>
+
 
     <script type="text/javascript" src="./style.js"></script>
+
+
+
+    <script>
+        // Número de WhatsApp (incluye el código de país sin el "+" inicial)
+        const phoneNumber = "34602316998";
+        
+        // Mensaje predeterminado
+        const message = "Hola, ";
+        
+        // Construir la URL
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        
+        // Asignar la URL al botón
+        const testButton = document.getElementById("testbutton");
+        testButton.href = whatsappURL;
+        testButton.target = "_blank";
+    </script>
 </body>
+
 </html>

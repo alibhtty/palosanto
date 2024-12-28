@@ -19,7 +19,6 @@
     <meta property="og:description" content="Palo Santo - Barcelona" />
     <meta property="og:url" content="https://palosanto.web.app/" />
     <meta property="og:site_name" content="Palo Santo - Barcelona" />
-    <meta property="article:modified_time" content="2024-10-01T04:10:14+00:00" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- SLIDE-TEXT -->
@@ -87,6 +86,12 @@ gtag('config', 'G-GBQG82FZQ1');
 <body class="home page-template page-template-front-page page-template-front-page-php page page-id-4 group-blog" oncontextmenu="return false" onkeydown="return false">
 
     <div id="wrapper">
+
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+              <p> <span id="countdown">3</span> </p>
+            </div>
+        </div>
 
         <!-- Header -->
         <div class='panel home' data-section-name="home">
@@ -198,7 +203,7 @@ gtag('config', 'G-GBQG82FZQ1');
             <div class="swiper-wrapper">
                 <div class="slide swiper-slide">
                     <picture>
-                        <source srcset="./assets/image/swiper/01.jpg" media="(max-width: 767px)">
+                        <source srcset="./assets/image/swiper/01o.jpg" media="(max-width: 767px)">
                         <img loading="lazy" src="./assets/image/swiper/01.jpg" alt="Palo Santo">
                     </picture>
                     <div class="content">
@@ -211,7 +216,7 @@ gtag('config', 'G-GBQG82FZQ1');
 
                 <div class="slide swiper-slide">
                     <picture>
-                        <source srcset="./assets/image/swiper/02.jpg" media="(max-width: 767px)">
+                        <source srcset="./assets/image/swiper/02o.jpg" media="(max-width: 767px)">
                         <img loading="lazy" src="./assets/image/swiper/02.jpg" alt="Palo Santo">
                     </picture>
                     <div class="content">
@@ -224,7 +229,7 @@ gtag('config', 'G-GBQG82FZQ1');
 
                 <div class="slide swiper-slide">
                     <picture>
-                        <source srcset="./assets/image/swiper/03.jpg" media="(max-width: 767px)">
+                        <source srcset="./assets/image/swiper/03o.jpg" media="(max-width: 767px)">
                         <img loading="lazy" src="./assets/image/swiper/03.jpg" alt="Palo Santo">
                     </picture>
                     <div class="content">
@@ -238,7 +243,7 @@ gtag('config', 'G-GBQG82FZQ1');
 
                 <div class="slide swiper-slide">
                     <picture>
-                        <source srcset="./assets/image/swiper/04.jpg" media="(max-width: 767px)">
+                        <source srcset="./assets/image/swiper/04o.jpg" media="(max-width: 767px)">
                         <img loading="lazy" src="./assets/image/swiper/04.jpg" alt="Palo Santo">
                     </picture>
                     <div class="content">
@@ -247,6 +252,29 @@ gtag('config', 'G-GBQG82FZQ1');
                             <h2>en nuestros<br>cócteles 🍸</h2>
                             <a href="#" class="btn">VER MÁS</a>
                         </div> -->
+                    </div>
+                </div>
+
+                <div class="slide swiper-slide">
+                    <picture>
+                        <source srcset="./assets/image/swiper/05o.jpg" media="(max-width: 767px)">
+                        <img loading="lazy" src="./assets/image/swiper/05.jpg" alt="Palo Santo">
+                    </picture>
+                    <div class="content">
+                        <!-- <div class="container">
+                            <h2 class="predomine"> Palo Santo 🔥</h2>
+                            <h2>Cada semana <br> nuevos artistas <br> y djs.</h2>
+                            <a href="./fotos/" class="btn">VER MÁS</a>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="slide swiper-slide">
+                    <picture>
+                        <source srcset="./assets/image/swiper/06o.jpg" media="(max-width: 767px)">
+                        <img loading="lazy" src="./assets/image/swiper/06.jpg" alt="Palo Santo">
+                    </picture>
+                    <div class="content">
                     </div>
                 </div>
             </div>
@@ -347,7 +375,7 @@ gtag('config', 'G-GBQG82FZQ1');
                                     <div class="content-details fadeIn-bottom">
                                         <h4>Mie 12 Dic</h4>
                                         <!-- <p class="content-text">Nuestros platos wok más <br> pedidos, una combinación <br> asiática con mucho sabor.</p><br> -->
-                                        <p><a href="./carta/index.html#tacos" class="read-btn"> VER MÁS</a></p>
+                                        <p><a href="./fotos/diciembre/01/" class="read-btn"> VER MÁS</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -407,7 +435,7 @@ gtag('config', 'G-GBQG82FZQ1');
                         </div>
 
                         <div class="col-md-4 p-0 col-xs-12 readmore-box" style="background: var(--light-amarillo)">
-                            <div class="box-bg"> <a href="https://instagram.com/palosantofiesta/" class="our-news">CONTINÚA<br> <u>VIENDO AQUÍ</u></a>
+                            <div class="box-bg"> <a href="https://instagram.com/palosantofiesta/" class="our-news" target="_blank">CONTINÚA<br> <u>VIENDO AQUÍ</u></a>
                             </div>
                         </div>
                     </div>
@@ -425,7 +453,7 @@ gtag('config', 'G-GBQG82FZQ1');
                     data-infowindow-start-open="" data-dark-color-scheme="1"
                     data-marker-style="nectar" data-nectar-marker-color="accent-color"
                     data-ultra-flat="" data-greyscale="1" data-extra-color=""
-                    data-enable-animation="1" data-enable-zoom="" data-zoom-level="14.5"
+                    data-enable-animation="1" data-enable-zoom="" data-zoom-level="15.5"
                     data-center-lat="41.3802228" data-center-lng="2.1755196999999997" 
                     data-marker-img="">  <!-- 41.410578882920646   2.2004456189485646 -->
                 </div>
@@ -523,7 +551,7 @@ gtag('config', 'G-GBQG82FZQ1');
                                 <div style="cursor:pointer" class="col-sm-5 col-xs-12 reservation-section">
                                     <div class="resrvation">
                                         <h3>GALERÍA DE FOTOS</h3>
-                                        <a href="./fotos/diciembre/01/" class="makebutton toggleReservation">Miércoles 18/12/2024</a>
+                                        <a href="./fotos/diciembre/03/" class="makebutton toggleReservation">Miércoles 25/12/2024</a>
                                         <!-- <div class="textwidget">
                                             <p class="foot-content" style="padding-bottom:20px;">Completa la información
                                                 necesaria en nuestro sistema de reservas, al terminar recibirá un correo de
