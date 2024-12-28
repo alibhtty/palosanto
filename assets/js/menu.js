@@ -117,7 +117,7 @@ $ = jQuery;
 
 
 
-    // Función para mostrar el modal
+    /* // Función para mostrar el modal
 function showModal() {
     const modal = document.getElementById("modal");
     const countdownElement = document.getElementById("countdown");
@@ -153,4 +153,66 @@ function showModal() {
   // Repetir el modal cada 10 minutos (600000 ms)
   setInterval(() => {
     showModal();
-  }, 300000); // 5 minutos
+  }, 300000); // 5 minutos */
+
+
+
+  // Función para mostrar el modal
+function showModal() {
+  const modal = document.getElementById("modal");
+  const countdownElement = document.getElementById("countdown");
+  let countdown = 5; // Tiempo de cuenta regresiva en segundos
+
+  modal.classList.remove("hidden");
+
+  // Actualizar la cuenta regresiva
+  const countdownInterval = setInterval(() => {
+      countdown--;
+      countdownElement.textContent = countdown;
+
+      if (countdown === 0) {
+          clearInterval(countdownInterval);
+          redirectToContact(); // Redirigir al finalizar la cuenta regresiva
+      }
+  }, 1000);
+
+  // Guardar el intervalo en el modal para detenerlo si es necesario
+  modal.dataset.countdownInterval = countdownInterval;
+}
+
+// Función para redirigir suavemente
+function redirectToContact() {
+  document.body.classList.add("fade-out"); // Aplicar la clase para la transición
+  window.location.href = "./contacto"; // Cambiar a la ruta deseada inmediatamente
+}
+
+// Mostrar el modal la primera vez después de 50 segundos (50000 ms)
+setTimeout(() => {
+  showModal();
+}, 50000); // 50 segundos
+
+// Repetir el modal cada 5 minutos (300000 ms)
+setInterval(() => {
+  showModal();
+}, 300000); // 5 minutos
+
+// Función para cerrar el modal y detener el contador
+function closeModal() {
+  const modal = document.getElementById("modal");
+  const countdownInterval = modal.dataset.countdownInterval;
+
+  // Detener el intervalo si existe
+  if (countdownInterval) {
+      clearInterval(countdownInterval);
+  }
+
+  // Ocultar el modal
+  modal.classList.add("hidden");
+}
+
+// Agregar evento al botón "Volver"
+const backButton = document.getElementById("backButton");
+backButton.addEventListener("click", () => {
+  closeModal();
+  history.back(); // Regresar a la página anterior
+});
