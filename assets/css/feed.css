@@ -108,7 +108,7 @@ body{
   /* PWA STYLE */
   @media screen and (display-mode: standalone) {
     .galeria-title{
-      margin-top: 8rem;
+      margin-top: 3em;
       margin-bottom: 0;
     }
   }
