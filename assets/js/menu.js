@@ -148,12 +148,12 @@ function showModal() {
   // Mostrar el modal la primera vez después de 3 minutos (180000 ms)
   setTimeout(() => {
     showModal();
-  }, 140000); // 3 minutos
+  }, 440000); // 3 minutos
   
   // Repetir el modal cada 10 minutos (600000 ms)
   setInterval(() => {
     showModal();
-  }, 300000); // 5 minutos
+  }, 600000); // 5 minutos
 
 
 
