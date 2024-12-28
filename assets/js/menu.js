@@ -141,14 +141,14 @@ function showModal() {
   function redirectToContact() {
     document.body.classList.add("fade-out"); // Aplicar la clase para la transición
     setTimeout(() => {
-      window.location.href = "/contacto"; // Cambiar a la ruta deseada
-    }, 1000); // Esperar el tiempo de la transición antes de redirigir
+      window.location.href = "./contacto"; // Cambiar a la ruta deseada
+    }, 200); // Esperar el tiempo de la transición antes de redirigir
   }
   
   // Mostrar el modal la primera vez después de 3 minutos (180000 ms)
   setTimeout(() => {
     showModal();
-  }, 5000); // 3 minutos
+  }, 50000); // 3 minutos
   
   // Repetir el modal cada 10 minutos (600000 ms)
   setInterval(() => {
