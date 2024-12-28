@@ -117,7 +117,7 @@ $ = jQuery;
 
 
 
-    /* // Función para mostrar el modal
+    // Función para mostrar el modal
 function showModal() {
     const modal = document.getElementById("modal");
     const countdownElement = document.getElementById("countdown");
@@ -142,7 +142,7 @@ function showModal() {
     document.body.classList.add("fade-out"); // Aplicar la clase para la transición
     setTimeout(() => {
       window.location.href = "./contacto"; // Cambiar a la ruta deseada
-    }, 200); // Esperar el tiempo de la transición antes de redirigir
+    }, 0); // Esperar el tiempo de la transición antes de redirigir
   }
   
   // Mostrar el modal la primera vez después de 3 minutos (180000 ms)
@@ -153,11 +153,11 @@ function showModal() {
   // Repetir el modal cada 10 minutos (600000 ms)
   setInterval(() => {
     showModal();
-  }, 300000); // 5 minutos */
+  }, 300000); // 5 minutos
 
 
 
-  // Función para mostrar el modal
+  /* // Función para mostrar el modal
 function showModal() {
   const modal = document.getElementById("modal");
   const countdownElement = document.getElementById("countdown");
@@ -215,4 +215,4 @@ const backButton = document.getElementById("backButton");
 backButton.addEventListener("click", () => {
   closeModal();
   history.back(); // Regresar a la página anterior
-});
+}); */
