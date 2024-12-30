@@ -87,8 +87,8 @@ $ = jQuery;
 
 
     /* TIEMPO LIMITE */
-    const dueDate = new Date('2024-12-29'); // Fecha límite
-    const deadline = 6; // 6 DIAS PARA DESAPARECER - SAB 4 ENE
+    const dueDate = new Date('2025-01-02'); // Fecha límite
+    const deadline = 4; // 6 DIAS PARA DESAPARECER - SAB 4 ENE
     
     // Calcular días transcurridos
     const daysPassed = Math.floor(
