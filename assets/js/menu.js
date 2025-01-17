@@ -87,7 +87,7 @@ $ = jQuery;
 
 
     /* TIEMPO LIMITE */
-    const dueDate = new Date('2025-01-02'); // Fecha límite
+    /* const dueDate = new Date('2025-01-02'); // Fecha límite
     const deadline = 4; // 6 DIAS PARA DESAPARECER - SAB 4 ENE
     
     // Calcular días transcurridos
@@ -105,10 +105,13 @@ $ = jQuery;
     
       // Aplicar opacidad al cuerpo del sitio web
       document.body.style.opacity = opacity;
-    }
+    } */
 
 
 
+
+
+      
     /* PASADOS 3 MIN */
     // Redirigir después de 3 minutos
     /* setTimeout(() => {
