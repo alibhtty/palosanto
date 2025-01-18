@@ -121,7 +121,7 @@ $ = jQuery;
 
 
     // Función para mostrar el modal
-function showModal() {
+/* function showModal() {
     const modal = document.getElementById("modal");
     const countdownElement = document.getElementById("countdown");
     let countdown = 5; // Tiempo de cuenta regresiva en segundos
@@ -156,9 +156,16 @@ function showModal() {
   // Repetir el modal cada 10 minutos (600000 ms)
   setInterval(() => {
     showModal();
-  }, 600000); // 5 minutos
+  }, 600000); // 5 minutos */
 
 
+
+
+
+
+
+
+  
 
   /* // Función para mostrar el modal
 function showModal() {
